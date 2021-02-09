@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="DemoApp.CommandListUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             FontFamily="Verdana">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../MainWindowResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <!-- WHY BS: Hvorfor må UI for menyen splittes ut i datatemplate, som ligger i resources, som igjen er full av andre ting? Burde jo ligget her, eller i 
+          MainViewMeny.xaml e.l. Synes dette kompliserer veldig. Hele templatingmodellen er kompleks, og hever terskel for WPF. Må få gjort 
+          den så enkel og tydelig som mulig. -->
+    <HeaderedContentControl Content="{Binding Path=Commands}"
+                            Header="Control Panel"
+                            Style="{StaticResource MainHCCStyle}">
+        <!--
+                      This template explains how to render the list of commands on the left
+                      side in the main window (the 'Control Panel' area).
+                      -->
+        <HeaderedContentControl.ContentTemplate>
+            <DataTemplate>
+                <ItemsControl IsTabStop="False"
+                              ItemsSource="{Binding}"
+                              Margin="6,2">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Margin="2,6">
+                                        <Hyperlink Command="{Binding Path=Command}">
+                                          <TextBlock Text="{Binding Path=DisplayName}" />
+                                        </Hyperlink>
+                                      </TextBlock>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </DataTemplate>
+        </HeaderedContentControl.ContentTemplate>
+
+    </HeaderedContentControl>
+</UserControl>
