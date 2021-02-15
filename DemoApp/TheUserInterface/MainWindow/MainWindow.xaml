@@ -14,10 +14,7 @@
         <!-- WHY BS: To see in designer: https://docs.microsoft.com/he-il/troubleshoot/visualstudio/general/cannot-find-resource-named-error -->
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="MainWindowResources.xaml" />
-                <!--<ResourceDictionary Source="../Customer/SingleCustomer/CustomerViewResources.xaml" />
-                <ResourceDictionary Source="../Customer/AllCustomers/AllCustomersViewResources.xaml" />-->
-
+                <ResourceDictionary Source="../../GlobalStyling/GlobalStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 

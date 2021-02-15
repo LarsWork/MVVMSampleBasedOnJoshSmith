@@ -6,9 +6,9 @@ namespace DemoApp.ViewModel
     /// <summary>
     /// Represents an actionable item displayed by a View.
     /// </summary>
-    public class CommandViewModel : ViewModelBase
+    public class MenuChoiceViewModel : ViewModelBase
     {
-        public CommandViewModel(string displayName, ICommand command)
+        public MenuChoiceViewModel(string displayName, ICommand command)
         {
             if (command == null)
                 throw new ArgumentNullException("command");

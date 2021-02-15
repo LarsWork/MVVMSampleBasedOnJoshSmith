@@ -80,10 +80,11 @@
   <ItemGroup>
     <Compile Include="DataAccess\CustomerAddedEventArgs.cs" />
     <Compile Include="DataAccess\CustomerRepository.cs" />
-    <Compile Include="Windows\MainWindow\CommandListOnLeft\CommandListUserControl.xaml.cs">
-      <DependentUpon>CommandListUserControl.xaml</DependentUpon>
+    <Compile Include="GlobalStyling\GlobalBrushes.cs" />
+    <Compile Include="TheUserInterface\MainWindow\MenuListOnLeft\LeftsideMenuView.xaml.cs">
+      <DependentUpon>LeftsideMenuView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\MainWindow\MainWindow.xaml.cs">
+    <Compile Include="TheUserInterface\MainWindow\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Customer.cs" />
@@ -101,16 +102,16 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Common\RelayCommand.cs" />
-    <Compile Include="Windows\MainWindow\CommandListOnLeft\CommandViewModel.cs" />
-    <Compile Include="Windows\Customer\AllCustomersTab\AllCustomersViewModel.cs" />
-    <Compile Include="Windows\Customer\EditSingleCustomerTab\CustomerViewModel.cs" />
-    <Compile Include="Windows\MainWindow\MainWindowViewModel.cs" />
+    <Compile Include="TheUserInterface\MainWindow\MenuListOnLeft\MenuChoiceViewModel.cs" />
+    <Compile Include="TheUserInterface\Customer\AllCustomersTab\AllCustomersViewModel.cs" />
+    <Compile Include="TheUserInterface\Customer\EditSingleCustomerTab\CustomerViewModel.cs" />
+    <Compile Include="TheUserInterface\MainWindow\MainWindowViewModel.cs" />
     <Compile Include="Common\ViewModelBase.cs" />
-    <Compile Include="Windows\MainWindow\WorkspaceOnRight\WorkspaceViewModel.cs" />
-    <Compile Include="Windows\Customer\AllCustomersTab\AllCustomersView.xaml.cs">
+    <Compile Include="TheUserInterface\MainWindow\WorkspaceOnRight\WorkspaceViewModel.cs" />
+    <Compile Include="TheUserInterface\Customer\AllCustomersTab\AllCustomersView.xaml.cs">
       <DependentUpon>AllCustomersView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Customer\EditSingleCustomerTab\CustomerView.xaml.cs">
+    <Compile Include="TheUserInterface\Customer\EditSingleCustomerTab\CustomerView.xaml.cs">
       <DependentUpon>CustomerView.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Strings.resx">
@@ -127,34 +128,39 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Windows\Customer\AllCustomersTab\AllCustomersViewDatabinding.xaml">
+    <Page Include="GlobalStyling\GlobalStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
-    <Page Include="Windows\Customer\EditSingleCustomerTab\CustomerViewDatabinding.xaml">
+    <Page Include="TheUserInterface\Customer\AllCustomersTab\AllCustomersViewDatabinding.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
-    <Page Include="Windows\MainWindow\CommandListOnLeft\CommandListUserControl.xaml">
+    <Page Include="TheUserInterface\Customer\EditSingleCustomerTab\CustomerViewDatabinding.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="TheUserInterface\MainWindow\MenuListOnLeft\LeftsideMenuView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Windows\MainWindow\MainWindow.xaml">
+    <Page Include="TheUserInterface\MainWindow\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\MainWindow\MainWindowResources.xaml">
+    <Page Include="TheUserInterface\MainWindow\NotInUse-MainWindowResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
-    <Page Include="Windows\Customer\AllCustomersTab\AllCustomersView.xaml">
+    <Page Include="TheUserInterface\Customer\AllCustomersTab\AllCustomersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\Customer\EditSingleCustomerTab\CustomerView.xaml">
+    <Page Include="TheUserInterface\Customer\EditSingleCustomerTab\CustomerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -162,7 +168,9 @@
   <ItemGroup>
     <Resource Include="Data\customers.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="GlobalStyling\readme.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

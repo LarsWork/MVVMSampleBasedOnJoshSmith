@@ -19,7 +19,7 @@ namespace DemoApp.ViewModel
     {
         #region Fields
                 
-        ReadOnlyCollection<CommandViewModel> _commands;
+        ReadOnlyCollection<MenuChoiceViewModel> _commands;
         readonly CustomerRepository _customerRepository;
         ObservableCollection<WorkspaceViewModel> _workspaces;
 
@@ -42,28 +42,28 @@ namespace DemoApp.ViewModel
         /// Returns a read-only list of commands 
         /// that the UI can display and execute.
         /// </summary>
-        public ReadOnlyCollection<CommandViewModel> Commands
+        public ReadOnlyCollection<MenuChoiceViewModel> Commands
         {
             get
             {
                 if (_commands == null)
                 {
-                    List<CommandViewModel> cmds = this.CreateCommands();
-                    _commands = new ReadOnlyCollection<CommandViewModel>(cmds);
+                    List<MenuChoiceViewModel> cmds = this.CreateCommands();
+                    _commands = new ReadOnlyCollection<MenuChoiceViewModel>(cmds);
                 }
                 return _commands;
             }
         }
 
-        List<CommandViewModel> CreateCommands()
+        List<MenuChoiceViewModel> CreateCommands()
         {
-            return new List<CommandViewModel>
+            return new List<MenuChoiceViewModel>
             {
-                new CommandViewModel(
+                new MenuChoiceViewModel(
                     Strings.MainWindowViewModel_Command_ViewAllCustomers,
                     new RelayCommand(param => this.ShowAllCustomers())),
 
-                new CommandViewModel(
+                new MenuChoiceViewModel(
                     Strings.MainWindowViewModel_Command_CreateNewCustomer,
                     new RelayCommand(param => this.CreateNewCustomer()))
             };

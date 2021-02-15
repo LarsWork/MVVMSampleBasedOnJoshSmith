@@ -1,0 +1,1 @@
+﻿Contains global styling elements like styles and brushes, available to all GUI elements.
